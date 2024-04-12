@@ -1,0 +1,720 @@
+MODULE-3 BASIC LOGIC PROBLEM
+
+
+1.Display This Information using printf
+a. Your Name
+b. Your Birth date
+c. Your Age
+d. Your Address
+
+#include <stdio.h>
+
+int main() {
+    // Information
+    char name[] = "Krishna";
+    char birthDate[] = "August 5, 2002";
+    int age = 24;
+    char address[] = "C-157 Bhagyalaxmi Soc, Vadodara, India";
+
+    printf("Name: %s\n", name);
+    printf("Birth Date: %s\n", birthDate);
+    printf("Age: %d\n", age);
+    printf("Address: %s\n", address);
+
+    return 0;
+}
+
+
+
+2. Write a program to make Simple calculator (to make addition, subtraction,
+multiplication, division and modulo)
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float num1, num2;
+    char c;
+
+    printf("Enter operator (+, -, *, /, %%): ");
+    scanf(" %c", &c);
+
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+
+    switch (c) {
+        case '+':
+            printf("%.2f + %.2f = %.2f\n", num1, num2, num1 + num2);
+            break;
+        case '-':
+            printf("%.2f - %.2f = %.2f\n", num1, num2, num1 - num2);
+            break;
+        case '*':
+            printf("%.2f * %.2f = %.2f\n", num1, num2, num1 * num2);
+            break;
+        case '/':
+            if (num2 != 0)
+                printf("%.2f / %.2f = %.2f\n", num1, num2, num1 / num2);
+            else
+                printf("Error! Division by zero.\n");
+            break;
+        case '%':
+            if (num2 != 0)
+                printf("%.2f %% %.2f = %.2f\n", num1, num2, fmod(num1, num2));
+            else
+                printf("Error! Modulo by zero.\n");
+            break;
+        default:
+            printf("Error! Invalid Operator.\n");
+    }
+
+    return 0;
+}
+
+
+
+3. WAP to Find Area And Circumference of Circle
+
+#include <stdio.h>
+
+int main() {
+    float radius,PI=3.14159;
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+
+    float area = PI * radius * radius;
+    float circumference = 2 * PI * radius;
+
+    printf("Area of the circle: %.2f\n", area);
+    printf("Circumference of the circle: %.2f\n", circumference);
+
+    return 0;
+}
+
+
+4. Find Area of Square formula : a = a2
+
+#include <stdio.h>
+
+int main() {
+    float side, area;
+
+    printf("Enter the length of side of square: ");
+    scanf("%f", &side);
+
+    area = side * side;
+
+    printf("Area of square: %.2f\n", area);
+
+    return 0;
+}
+
+
+5. Find Area of Cube formula : a = 6a2
+
+#include <stdio.h>
+
+int main() {
+    float side, area;
+
+    printf("Enter the length of side of cube: ");
+    scanf("%f", &side);
+
+    area = 6 * side * side;
+
+    printf("Surface area of cube: %.2f\n", area);
+
+    return 0;
+}
+
+
+6. Find area of Triangle Formula : A = 1/2 × b × h
+
+#include <stdio.h>
+
+int main() {
+    float base, height, area;
+
+    printf("Enter the base length of triangle: ");
+    scanf("%f", &base);
+    printf("Enter the height of triangle: ");
+    scanf("%f", &height);
+
+    area = 0.5 * base * height;
+
+    printf("Area of triangle: %.2f\n", area);
+
+    return 0;
+}
+
+
+7. Find area of Rectangle Formula : A=wl
+
+#include <stdio.h>
+
+int main() {
+    float width, length, area;
+
+    printf("Enter the width of rectangle: ");
+    scanf("%f", &width);
+    printf("Enter the length of rectangle: ");
+    scanf("%f", &length);
+
+    area = width * length;
+
+    printf("Area of rectangle: %.2f\n", area);
+
+    return 0;
+}
+
+
+8. Find circumference of Rectangle formula : C = 4 * a
+
+#include <stdio.h>
+
+int main() {
+    float width, length, circumference;
+
+    printf("Enter the width of rectangle: ");
+    scanf("%f", &width);
+    printf("Enter the length of rectangle: ");
+    scanf("%f", &length);
+
+    circumference = 2 * (width + length);
+
+    printf("Circumference of rectangle: %.2f\n", circumference);
+
+    return 0;
+}
+
+9. Find circumference of Triangle formula : triangle = a + b + c
+
+#include <stdio.h>
+
+int main() {
+    float side1, side2, side3, circumference;
+
+    printf("Enter the length of side 1 of triangle: ");
+    scanf("%f", &side1);
+    printf("Enter the length of side 2 of triangle: ");
+    scanf("%f", &side2);
+    printf("Enter the length of side 3 of triangle: ");
+    scanf("%f", &side3);
+
+    circumference = side1 + side2 + side3;
+
+    printf("Circumference of triangle: %.2f\n", circumference);
+
+    return 0;
+}
+
+10.find the area of a rectangular prism formula : A=2(wl+hl+hw)
+
+#include <stdio.h>
+
+int main() {
+    float width, length, height, area;
+
+    printf("Enter the width of rectangular prism: ");
+    scanf("%f", &width);
+    printf("Enter the length of rectangular prism: ");
+    scanf("%f", &length);
+    printf("Enter the height of rectangular prism: ");
+    scanf("%f", &height);
+
+    area = 2 * (width * length + height * length + height * width);
+
+    printf("Surface area of rectangular prism: %.2f\n", area);
+
+    return 0;
+}
+
+11.Find circumference of square formula : C = 4 * a
+
+#include <stdio.h>
+
+int main() {
+    float side, circumference;
+
+    printf("Enter the length of side of square: ");
+    scanf("%f", &side);
+
+    circumference = 4 * side;
+
+    printf("Circumference of square: %.2f\n", circumference);
+
+    return 0;
+}
+
+12.Accept number of students from user. I need to give 5 apples to each
+student. How many apples are required?
+
+#include <stdio.h>
+
+int main() {
+    int numStudents;
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+
+    int totalApples = numStudents * 5;
+    printf("Total apples required: %d\n", totalApples);
+
+    return 0;
+}
+
+
+13.Find character value from ascii
+
+#include <stdio.h>
+
+int main() {
+    int asciiValue;
+    printf("Enter ASCII value: ");
+    scanf("%d", &asciiValue);
+
+    char character = asciiValue;
+    printf("Character: %c\n", character);
+
+    return 0;
+}
+
+14.Find ascii value of given number
+
+#include <stdio.h>
+
+int main() {
+    char character;
+    printf("Enter a character: ");
+    scanf("%c", &character);
+
+    int asciiValue = character;
+    printf("ASCII value: %d\n", asciiValue);
+
+    return 0;
+}
+
+
+15.Convert school’s name in abbreviated form
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char schoolName[50];
+    printf("Enter the name of the school: ");
+    fgets(schoolName, sizeof(schoolName), stdin);
+
+    char abbreviation[10];
+    abbreviation[0] = schoolName[0]; // Copy the first character as it is
+
+    int j = 1;
+    for (int i = 1; i < strlen(schoolName); i++) {
+        if (schoolName[i - 1] == ' ') {
+            // Convert the character to uppercase
+            if (schoolName[i] >= 'a' && schoolName[i] <= 'z') {
+                abbreviation[j] = schoolName[i] - 32; // Convert lowercase to uppercase
+            } else {
+                abbreviation[j] = schoolName[i];
+            }
+            j++;
+        }
+    }
+    abbreviation[j] = '\0'; // Terminate string
+
+    printf("Abbreviated form of the school name: %s\n", abbreviation);
+
+    return 0;
+}
+
+
+16.Convert country’s name in abbreviate form
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char countryName[50];
+    printf("Enter the name of the country: ");
+    fgets(countryName, sizeof(countryName), stdin);
+
+    char abbreviation[10];
+    abbreviation[0] = countryName[0]; // First character of country name
+
+    // Find uppercase characters after spaces
+    int j = 1;
+    for (int i = 1; i < strlen(countryName); i++) {
+        if (countryName[i - 1] == ' ') {
+            abbreviation[j] = countryName[i];
+            j++;
+        }
+    }
+    abbreviation[j] = '\0'; // Terminate string
+
+    printf("Abbreviated form of the country name: %s\n", abbreviation);
+
+    return 0;
+}
+
+
+
+17.Calculate person’s insurance premium based on salary
+
+#include <stdio.h>
+
+int main() {
+    float salary, premium;
+
+    printf("Enter the salary of the person: ");
+    scanf("%f", &salary);
+
+    // Assuming insurance premium is 10% of the salary
+    premium = 0.10 * salary;
+
+    printf("Insurance premium: %.2f\n", premium);
+
+    return 0;
+}
+
+18.Calculate person’s Annual salary
+
+#include <stdio.h>
+
+int main() {
+    float monthlySalary, annualSalary;
+
+    printf("Enter the monthly salary of the person: ");
+    scanf("%f", &monthlySalary);
+
+    annualSalary = 12 * monthlySalary;
+
+    printf("Annual salary: %.2f\n", annualSalary);
+
+    return 0;
+}
+
+19.Calculate compound interest
+
+#include <stdio.h>
+
+int main() {
+    float principal, rate, time, compoundInterest;
+
+    printf("Enter the principal amount: ");
+    scanf("%f", &principal);
+
+ 
+    printf("Enter the annual interest rate (in percentage): ");
+    scanf("%f", &rate);
+
+    printf("Enter the time period (in years): ");
+    scanf("%f", &time);
+
+    rate = rate / 100;
+
+    compoundInterest = principal * (pow(1 + rate, time) - 1);
+    printf("Compound interest: %.2f\n", compoundInterest);
+
+    return 0;
+}
+
+
+20.Accept monthly salary from the user and deduct 10% insurance premium,
+10% loan installment find out of remaining salary.
+
+#include <stdio.h>
+
+int main() {
+    float monthly_salary, insurance_premium, loan_installment, remaining_salary;
+
+    printf("Enter the monthly salary: ");
+    scanf("%f", &monthly_salary);
+
+    insurance_premium = 0.1 * monthly_salary;
+    loan_installment = 0.1 * monthly_salary;
+
+    remaining_salary = monthly_salary - insurance_premium - loan_installment;
+
+    printf("Insurance premium: %.2f\n", insurance_premium);
+    printf("Loan installment: %.2f\n", loan_installment);
+    printf("Remaining salary: %.2f\n", remaining_salary);
+
+    return 0;
+}
+
+
+
+
+21.Accept 2 numbers from user and swap 2 numbers with using 3rd variable
+and without using 3rd variable
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+
+    num1 = num1 + num2;
+    num2 = num1 - num2;
+    num1 = num1 - num2;
+
+    printf("Numbers after swapping without a third variable:\n");
+    printf("First number: %d\n", num1);
+    printf("Second number: %d\n", num2);
+
+    return 0;
+}
+
+
+22.Calculate compound interest (Compound Interest formula:
+a. Formula to calculate compound interest annually is given by:
+Amount= P(1 + R/100)t
+b. Compound Interest = Amount – P
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float principal, rate, time, amount, compound_interest;
+
+    // Accepting input from the user
+    printf("Enter the principal amount: ");
+    scanf("%f", &principal);
+    printf("Enter the interest rate (in percentage): ");
+    scanf("%f", &rate);
+    printf("Enter the time period (in years): ");
+    scanf("%f", &time);
+
+    // Calculating amount
+    amount = principal * pow((1 + rate / 100), time);
+
+    // Calculating compound interest
+    compound_interest = amount - principal;
+
+    // Displaying the result
+    printf("Amount after %0.2f years: %.2f\n", time, amount);
+    printf("Compound Interest: %.2f\n", compound_interest);
+
+    return 0;
+}
+
+
+23.WAP to calculate swap 2 numbers with using of multiplication and division.
+
+#include <stdio.h>
+
+int main() {
+    float num1, num2;
+
+    printf("Enter the first number: ");
+    scanf("%f", &num1);
+    printf("Enter the second number: ");
+    scanf("%f", &num2);
+
+    num1 = num1 * num2;
+    num2 = num1 / num2;
+    num1 = num1 / num2;
+
+    printf("Numbers after swapping:\n");
+    printf("First number: %.2f\n", num1);
+    printf("Second number: %.2f\n", num2);
+
+    return 0;
+}
+
+24.Accept 5 employees name and salary and count average and total salary
+
+#include <stdio.h>
+
+int main() {
+    char names[5][50];
+    float salaries[5];
+    float total_salary = 0;
+    float average_salary;
+    int i;
+
+    for (i = 0; i < 5; i++) {
+        printf("Enter name of employee %d: ", i+1);
+        scanf("%s", names[i]);
+        printf("Enter salary of employee %d: ", i+1);
+        scanf("%f", &salaries[i]);
+        total_salary += salaries[i];
+    }
+
+    average_salary = total_salary / 5;
+
+    printf("\nTotal salary of all employees: %.2f\n", total_salary);
+    printf("Average salary of all employees: %.2f\n", average_salary);
+
+    return 0;
+}
+
+25.Accept 5 expense from user and find average of expense
+
+#include <stdio.h>
+
+int main() {
+    float expenses[5];
+    float total_expense = 0;
+    float average_expense;
+    int i;
+
+    printf("Enter 5 expenses:\n");
+    for (i = 0; i < 5; i++) {
+        printf("Expense %d: ", i+1);
+        scanf("%f", &expenses[i]);
+        total_expense += expenses[i];
+    }
+
+    average_expense = total_expense / 5;
+
+    printf("\nAverage expense: %.2f\n", average_expense);
+
+    return 0;
+}
+
+
+
+26.Convert temperature Fahrenheit to Celsius
+
+#include <stdio.h>
+
+int main() {
+    float fahrenheit, celsius;
+
+    printf("Enter temperature in Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+
+    celsius = (5.0 / 9.0) * (fahrenheit - 32);
+
+    printf("Temperature in Celsius: %.2f\n", celsius);
+
+    return 0;
+}
+
+27.Convert days into months
+
+#include <stdio.h>
+
+int main() {
+    int days;
+    float months;
+
+    printf("Enter the number of days: ");
+    scanf("%d", &days);
+
+    months = days / 30;
+t
+    printf("Approximate number of months: %.2f\n", months);
+
+    return 0;
+}
+
+28.Convert years into days and months
+
+#include <stdio.h>
+
+int main() {
+    int years;
+    int days, months;
+
+    printf("Enter the number of years: ");
+    scanf("%d", &years);
+
+    days = years * 365; // Assuming 365 days in a year
+    months = days / 30; // Approximating the average number of days in a month
+
+    printf("number of days: %d\n", days);
+    printf("number of months: %d\n", months);
+
+    return 0;
+}
+
+
+29.Convert minutes into seconds and hours
+
+#include <stdio.h>
+
+int main() {
+    int minutes;
+    int seconds, hours;
+
+    printf("Enter the number of minutes: ");
+    scanf("%d", &minutes);
+
+    seconds = minutes * 60; // 60 seconds in a minute
+    hours = minutes / 60; // 60 minutes in an hour
+
+    printf("Number of seconds: %d\n", seconds);
+    printf("Number of hours: %d\n", hours);
+
+    return 0;
+}
+
+30.WAP to convert years into days and days into years
+
+#include <stdio.h>
+
+int main() {
+    int years;
+    int days;
+
+    printf("Enter the number of years: ");
+    scanf("%d", &years);
+
+    days = years * 365;
+
+    printf("%d years is equal to %d days.\n", years, days);
+
+    printf("Enter the number of days: ");
+    scanf("%d", &days);
+
+    years = days / 365;
+
+    printf("%d days is equal to %d years.\n", days, years);
+
+    return 0;
+}
+
+31.Convert kilometers into meters
+
+#include <stdio.h>
+
+int main() {
+    float kilometers;
+    float meters;
+
+    printf("Enter the distance in kilometers: ");
+    scanf("%f", &kilometers);
+
+    meters = kilometers * 1000; // 1 kilometer = 1000 meters
+
+    printf("%.2f kilometers is equal to %.2f meters.\n", kilometers, meters);
+
+    return 0;
+}
+
+32.Accept 2 numbers and find out its sum check it size
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2, sum;
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    sum = num1 + num2;
+
+    printf("Sum of %d and %d is %d.\n", num1, num2, sum);
+
+    printf("Size of the sum is %d bytes.\n", sizeof(sum));
+
+    return 0;
+}
