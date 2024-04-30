@@ -1,0 +1,448 @@
+MODULE-3 ARRAY
+
+1. Write a program to find out the max number from given array using function
+
+
+2. WAP of Addition, Subtraction, Multiplication and Division using Switch
+case.(Must Be Menu Driven)
+
+#include <stdio.h>
+
+int main() {
+    int choice, num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    printf("Choose operation:\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Result: %d\n", num1 + num2);
+            break;
+        case 2:
+            printf("Result: %d\n", num1 - num2);
+            break;
+        case 3:
+            printf("Result: %d\n", num1 * num2);
+            break;
+        case 4:
+            if (num2 != 0)
+                printf("Result: %.2f\n", (float)num1 / num2);
+            else
+                printf("Cannot divide by zero.\n");
+            break;
+        default:
+            printf("Invalid choice\n");
+    }
+    return 0;
+}
+
+5. WAP to take two Array input from user and sort them in ascending or
+descending order as per user’s choice
+
+#include <stdio.h>
+
+int main() {
+    int n1, n2, i, j, temp, order;
+    printf("Enter number of elements for first array: ");
+    scanf("%d", &n1);
+    int a1[n1];
+
+    printf("Enter elements for first array:\n");
+    for (i = 0; i < n1; i++) {
+        scanf("%d", &a1[i]);
+    }
+
+    printf("Enter number of elements for second array: ");
+    scanf("%d", &n2);
+    int a2[n2];
+
+    printf("Enter elements for second array:\n");
+    for (i = 0; i < n2; i++) {
+        scanf("%d", &a2[i]);
+    }
+
+    printf("Enter 1 for ascending or 2 for descending order: ");
+    scanf("%d", &order);
+
+    for (i = 0; i < n1 - 1; i++) {
+        for (j = 0; j < n1 - i - 1; j++) {
+            if ((order == 1 && a1[j] > a1[j + 1]) || (order == 2 && a1[j] < a1[j + 1])) {
+                temp = a1[j];
+                a1[j] = a1[j + 1];
+                a1[j + 1] = temp;
+            }
+        }
+    }
+
+    for (i = 0; i < n2 - 1; i++) {
+        for (j = 0; j < n2 - i - 1; j++) {
+            if ((order == 1 && a2[j] > a2[j + 1]) || (order == 2 && a2[j] < a2[j + 1])) {
+                temp = a2[j];
+                a2[j] = a2[j + 1];
+                a2[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Sorted first array:\n");
+    for (i = 0; i < n1; i++) {
+        printf("%d ", a1[i]);
+    }
+    printf("\n");
+
+    printf("Sorted second array:\n");
+    for (i = 0; i < n2; i++) {
+        printf("%d ", a2[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+6. WAP to make addition, Subtraction and multiplication of two matrix using
+2-D Array
+
+#include <stdio.h>
+
+int main() {
+    int A[2][2], B[2][2], result[2][2], i, j;
+
+    printf("Enter elements of first matrix:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Enter elements of second matrix:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Addition
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            result[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    printf("Addition of matrices:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%d\t", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Subtraction
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            result[i][j] = A[i][j] - B[i][j];
+        }
+    }
+
+    printf("Subtraction of matrices:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%d\t", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Multiplication
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            result[i][j] = 0;
+            for (int k = 0; k < 2; k++) {
+                result[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    printf("Multiplication of matrices:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%d\t", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+7. WAP Find out length of string without using inbuilt function
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int length = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+   
+    while (str[length] != '\0') {
+        length++;
+    }
+
+    printf("Length of the string: %d\n", length);
+
+    return 0;
+}
+
+8. WAP to reverse a string and check that the string is palindrome or not
+Write a program of structure employee that provides the following
+a. information -print and display empno, empname, address
+andage
+b. Write a program of structure for five employee that
+provides the following information -print and display
+empno, empname, address andage
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    char str[100];
+    int length = 0;
+    bool isPalindrome = true;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // Find the length of the string
+    while (*(str + length) != '\0') {
+        length++;
+    }
+
+    // Reverse the string
+    for (int i = 0; i < length / 2; i++) {
+        char temp = *(str + i);
+        *(str + i) = *(str + length - i - 1);
+        *(str + length - i - 1) = temp;
+    }
+
+    printf("Reversed string: %s\n", str);
+
+    // Check for palindrome
+    for (int i = 0; i < length / 2; i++) {
+        if (*(str + i) != *(str + length - i - 1)) {
+            isPalindrome = false;
+            break;
+        }
+    }
+
+    if (isPalindrome) {
+        printf("The string is a palindrome.\n");
+    } else {
+        printf("The string is not a palindrome.\n");
+    }
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+struct Employee {
+    int empno;
+    char empname[50];
+    char address[100];
+    int age;
+};
+
+int main() {
+    struct Employee emp;
+
+    printf("Enter employee number: ");
+    scanf("%d", &emp.empno);
+    printf("Enter employee name: ");
+    scanf("%s", emp.empname);
+    printf("Enter employee address: ");
+    scanf("%s", emp.address);
+    printf("Enter employee age: ");
+    scanf("%d", &emp.age);
+
+    printf("Employee Information:\n");
+    printf("Employee Number: %d\n", emp.empno);
+    printf("Employee Name: %s\n", emp.empname);
+    printf("Employee Address: %s\n", emp.address);
+    printf("Employee Age: %d\n", emp.age);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+struct Employee {
+    int empno;
+    char empname[50];
+    char address[100];
+    int age;
+};
+
+int main() {
+    struct Employee emp[5];
+
+    printf("Enter information for five employees:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Employee %d:\n", i + 1);
+        printf("Enter employee number: ");
+        scanf("%d", &emp[i].empno);
+        printf("Enter employee name: ");
+        scanf("%s", emp[i].empname);
+        printf("Enter employee address: ");
+        scanf("%s", emp[i].address);
+        printf("Enter employee age: ");
+        scanf("%d", &emp[i].age);
+    }
+
+    printf("\nEmployee Information:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Employee %d:\n", i + 1);
+        printf("Employee Number: %d\n", emp[i].empno);
+        printf("Employee Name: %s\n", emp[i].empname);
+        printf("Employee Address: %s\n", emp[i].address);
+        printf("Employee Age: %d\n", emp[i].age);
+    }
+
+    return 0;
+}
+
+
+11.WAP to accept 5 numbers from user and display in reverse order using for
+loop and array
+
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+
+  
+    printf("Enter 5 numbers:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+    printf("Numbers in reverse order:\n");
+    for (int i = 4; i >= 0; i--) {
+        printf("%d\n", numbers[i]);
+    }
+
+    return 0;
+}
+
+12.WAP to accept 5 students name and store it in array
+
+#include <stdio.h>
+
+int main() {
+    char names[5][50];
+
+
+    printf("Enter names of 5 students:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%s", names[i]);
+    }
+
+
+    printf("Students' names:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%s\n", names[i]);
+    }
+
+    return 0;
+}
+
+13.WAP to accept 5 numbers from user and check entered number is even or odd
+using of array
+
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+
+    printf("Enter 5 numbers:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+    printf("Even/Odd Check:\n");
+    for (int i = 0; i < 5; i++) {
+        if (numbers[i] % 2 == 0) {
+            printf("%d is even.\n", numbers[i]);
+        } else {
+            printf("%d is odd.\n", numbers[i]);
+        }
+    }
+
+    return 0;
+}
+
+
+15.Store 5 numbers in array and sort it in ascending order
+
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+
+    // Accept input from the user
+    printf("Enter 5 numbers:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4 - i; j++) {
+            if (numbers[j] > numbers[j + 1]) {
+                
+                int temp = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Numbers in ascending order:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d\n", numbers[i]);
+    }
+
+    return 0;
+}
+
+16.Accept 5 numbers from user and perform sum of array
+
+#include <stdio.h>
+
+int main() {
+    int numbers[5], sum = 0;
+
+   
+    printf("Enter 5 numbers:\n");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+  
+    for (int i = 0; i < 5; i++) {
+        sum += numbers[i];
+    }
+
+    printf("Sum of the numbers: %d\n", sum);
+
+    return 0;
+}
+

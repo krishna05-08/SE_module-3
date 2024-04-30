@@ -1,0 +1,236 @@
+1. Write a program in C to find the length of a string without using library
+functions.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int length = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // Find the length of the string
+    while (str[length] != '\0') {
+        length++;
+    }
+
+    printf("Length of the string: %d\n", length);
+
+    return 0;
+}
+
+2. Write a program in C to separate individual characters from a string.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Individual characters of the string:\n");
+    for (int i = 0; str[i] != '\0'; i++) {
+        printf("%c\n", str[i]);
+    }
+
+    return 0;
+}
+
+3. Write a program in C to print individual characters of a string in reverse order
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Individual characters of the string in reverse order:\n");
+    for (int i = 0; str[i] != '\0'; i++) {}
+
+    for (int i = i - 1; i >= 0; i--) {
+        printf("%c\n", str[i]);
+    }
+
+    return 0;
+}
+
+4. Write a program in C to count the total number of words in a string.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int words = 0;
+
+    printf("Enter a string: ");
+    scanf("%[^\n]", str);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n') {
+            words++;
+        }
+    }
+
+    printf("Total number of words: %d\n", words + 1);
+
+    return 0;
+}
+
+5. Write a program in C to compare two strings without using string library
+functions.
+
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100];
+    int isEqual = 1;
+
+    printf("Enter first string: ");
+    scanf("%s", str1);
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    for (int i = 0; str1[i] != '\0' || str2[i] != '\0'; i++) {
+        if (str1[i] != str2[i]) {
+            isEqual = 0;
+            break;
+        }
+    }
+
+    if (isEqual) {
+        printf("The strings are equal.\n");
+    } else {
+        printf("The strings are not equal.\n");
+    }
+
+    return 0;
+}
+
+6. Write a program in C to count the total number of alphabets, digits and special
+characters in a string.
+
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100];
+    int isEqual = 1;
+
+    printf("Enter first string: ");
+    scanf("%s", str1);
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    for (int i = 0; str1[i] != '\0' || str2[i] != '\0'; i++) {
+        if (str1[i] != str2[i]) {
+            isEqual = 0;
+            break;
+        }
+    }
+
+    if (isEqual) {
+        printf("The strings are equal.\n");
+    } else {
+        printf("The strings are not equal.\n");
+    }
+
+    return 0;
+}
+
+7. Write a program in C to copy one string to another string.
+
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100];
+    int i;
+
+    printf("Enter a string: ");
+    scanf("%s", str1);
+
+    // Copying str1 to str2
+    for (i = 0; str1[i] != '\0'; i++) {
+        str2[i] = str1[i];
+    }
+    str2[i] = '\0';
+
+    printf("Copied string: %s\n", str2);
+
+    return 0;
+}
+
+8. Write a program in C to count the total number of vowels or consonants in a
+string.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int vowels = 0, consonants = 0;
+
+    printf("Enter a string: ");
+    scanf("%[^\n]", str);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+                str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    printf("Total number of vowels: %d\n", vowels);
+    printf("Total number of consonants: %d\n", consonants);
+
+    return 0;
+}
+
+9. Write a program in C to find the maximum number of characters in a string.
+
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int maxCharacters = 0;
+
+    printf("Enter a string: ");
+    scanf("%[^\n]", str);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        maxCharacters++;
+    }
+
+    printf("Maximum number of characters in the string: %d\n", maxCharacters);
+
+    return 0;
+}
+
+11.Write a program in C to read a sentence and replace lowercase characters with
+uppercase and vice versa.
+#include <stdio.h>
+
+int main() {
+    char str[100];
+
+    printf("Enter a sentence: ");
+    scanf("%[^\n]", str);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32; 
+        } else if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32; 
+        }
+    }
+
+    printf("Converted sentence: %s\n", str);
+
+    return 0;
+}
+
